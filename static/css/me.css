@@ -1,3 +1,7 @@
+body {
+	background: url("../images/HomePageBackground.png");
+}
+
 .m-padded-mini {
 	padding: 0.2em !important;
 }
@@ -67,7 +71,10 @@
 
 /* opacity */
 .m-opacity-mini {
-	opacity: 0.7 !important;
+	opacity: 0.8 !important;
+}
+.m-opacity-tiny {
+	opacity: 0.6 !important;
 }
 
 /* position */
