@@ -164,7 +164,7 @@
 }
 
 /* 代码片断 */
-.typo pre, .typo code, .typo pre tt {
+/* .typo pre, .typo code, .typo pre tt {
     font-family: Courier, 'Courier New', monospace;
 }
 
@@ -176,7 +176,7 @@
     padding: 1em 1.5em;
     display: block;
     -webkit-overflow-scrolling: touch;
-}
+} */
 
 /* 一致化 horizontal rule */
 .typo hr {
