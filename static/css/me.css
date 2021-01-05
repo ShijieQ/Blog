@@ -8,6 +8,9 @@ body {
 .m-padded-tiny {
 	padding: 0.3em !important;
 }
+.m-padded {
+	padding: 1em !important;
+}
 
 .m-padded-tb-mini {
 	padding-top: 0.2em !important;
@@ -96,6 +99,15 @@ body {
 	top: 0;
 	right: 0;
 }
+.m-fixed {
+	position: fixed !important;
+	z-index: 10 !important;
+}
+.m-bottom-right {
+	bottom: 0;
+	right: 0;
+}
+
 
 /* display */
 .m-inline-block {
