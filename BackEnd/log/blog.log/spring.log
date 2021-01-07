@@ -1,0 +1,5 @@
+2021-01-08 01:43:29.898  INFO 15896 --- [restartedMain] com.shijieq.BlogApplication              : Starting BlogApplication using Java 10.0.1 on ShijieQAQ with PID 15896 (D:\Code\Git\Blog\BackEnd\target\classes started by ShijieQAQ in D:\Code\Git\Blog\BackEnd)
+2021-01-08 01:43:29.902  INFO 15896 --- [restartedMain] com.shijieq.BlogApplication              : The following profiles are active: pro
+2021-01-08 01:43:32.920  WARN 15896 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-01-08 01:43:33.239  WARN 15896 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2021-01-08 01:43:33.402  INFO 15896 --- [restartedMain] com.shijieq.BlogApplication              : Started BlogApplication in 4.459 seconds (JVM running for 6.598)
