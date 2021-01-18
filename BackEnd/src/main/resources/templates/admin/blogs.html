@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 
-<head>
+<head th:replace="admin/_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>博客管理</title>
@@ -11,7 +11,7 @@
 
 <body>
     <!-- 导航 -->
-    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
+    <nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item">ShijieQ</h2>
@@ -138,7 +138,7 @@
     </div>
 
     <!-- 底部 -->
-    <footer class="ui inverted vertical segment m-padded-tb-huge">
+    <footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment m-padded-tb-huge">
         <div class="ui container center aligned">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
