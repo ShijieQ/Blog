@@ -9,26 +9,48 @@
 <body>
   <div class="login-box">
     <h2>管理后台登录</h2>
-    <form method="post" action="#">
+    <form id="login" method="post" action="#" th:action="@{/admin/login}">
       <div class="user-box">
-        <input type="text" name="" required="">
+        <input type="text" name="username" required="" autocomplete="off">
         <label>用户名</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="password" required="" autocomplete="off">
         <label>密码</label>
       </div>
-      <a href="#">
+      <a onclick="document:login.submit()">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
         登录
       </a>
+<!--      <div class="ui basic error message"></div>-->
+      <div class="ui negative message" style="background-color: rgba(0,0,0,.5)" th:unless="${#strings.isEmpty(message)}" th:text="${message}"></div>
     </form>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <script>
+      $('.ui.form').form({
+          fields: {
+              username: {
+                  identifier: 'username',
+                  rules: [{
+                      type: 'empty',
+                      prompt: '请输入用户名'
+                  }]
+              },
+              password: {
+                  identifier: 'password',
+                  rules: [{
+                      type: 'empty',
+                      prompt: '请输入密码'
+                  }]
+              }
+          }
+      });
+  </script>
 </body>
 </html>
