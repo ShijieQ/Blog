@@ -4,8 +4,6 @@ import com.shijieq.po.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-
 /**
  * @author ShijieQ, on  2021/1/19 20:20
  */
