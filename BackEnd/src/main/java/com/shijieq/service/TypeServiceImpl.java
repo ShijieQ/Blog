@@ -27,7 +27,6 @@ public class TypeServiceImpl implements TypeService {
         return typeRepository.save(type);
     }
 
-    @Transactional
     @Override
     public Type getType(Long id) {
         return typeRepository.getOne(id);
@@ -38,7 +37,6 @@ public class TypeServiceImpl implements TypeService {
         return typeRepository.findByName(name);
     }
 
-    @Transactional
     @Override
     public Page<Type> listType(Pageable pageable) {
         return typeRepository.findAll(pageable);
