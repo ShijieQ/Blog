@@ -60,10 +60,10 @@ body {
 .m-text-lined {
 	line-height: 1.8;
 }
-/* .m-text {
+.m-text {
 	font-weight: 300 !important;
 	letter-spacing: 1px !important;
-} */
+}
 
 /* margin */
 .m-margin-top-small {
