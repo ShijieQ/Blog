@@ -54,8 +54,8 @@
                         <!-- content -->
                         <div class="ui attached segment">
 
-                            <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
-                                <div class="ui mobile reversed stackable grid">
+                            <div class="ui padded segment m-padded-tb-large" th:each="blog : ${page.content}">
+                                <div class="ui middle aligned mobile reversed stackable grid">
                                     <div class="eleven wide column">
                                         <h3 class="ui header"><a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由嘛?</a></h3>
                                         <p class="m-text" th:text="|${blog.description}......|">测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</p>

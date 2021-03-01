@@ -4,6 +4,7 @@ import com.shijieq.NotFoundException;
 import com.shijieq.dao.BlogRepository;
 import com.shijieq.po.Blog;
 import com.shijieq.po.Type;
+import com.shijieq.util.MarkdownUtils;
 import com.shijieq.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,19 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRepository.getOne(id);
+        if (blog == null) {
+            throw new NotFoundException("该博客不存在");
+        }
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog, b);
+        String content = b.getContent();
+        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
+    }
+
+    @Override
     public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) {
         return blogRepository.findAll(new Specification<Blog>() {
             @Override
@@ -61,6 +75,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Page<Blog> listBlog(Pageable pageable) {
         return blogRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Blog> listBlog(Pageable pageable, String query) {
+        return blogRepository.findByQuery(pageable, query);
     }
 
     @Override
