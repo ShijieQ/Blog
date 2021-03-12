@@ -2,6 +2,7 @@ package com.shijieq.service;
 
 import com.shijieq.NotFoundException;
 import com.shijieq.dao.BlogRepository;
+import com.shijieq.dao.CommentRepository;
 import com.shijieq.po.Blog;
 import com.shijieq.po.Type;
 import com.shijieq.util.MarkdownUtils;
@@ -27,6 +28,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private BlogRepository blogRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Override
     public Blog getBlog(Long id) {
@@ -140,6 +144,7 @@ public class BlogServiceImpl implements BlogService {
     @Transactional
     @Override
     public void deleteBlog(Long id) {
+        commentRepository.deleteByBlogId(id);
         blogRepository.deleteById(id);
     }
 }

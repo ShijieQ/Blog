@@ -48,7 +48,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- 博客内容 -->
             <div class="ui top attached teal segment">
                 <div class="ui padded segment m-padded-tb-large m-padded-lr-clear" th:each="blog : ${page.content}">
@@ -98,6 +97,16 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div th:if="${page.totalElements} < 5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 
     <!-- 底部 -->

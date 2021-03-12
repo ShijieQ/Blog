@@ -1,10 +1,8 @@
 package com.shijieq.web;
 
-import com.shijieq.NotFoundException;
 import com.shijieq.service.BlogService;
 import com.shijieq.service.TagService;
 import com.shijieq.service.TypeService;
-import com.shijieq.vo.BlogQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -50,5 +48,11 @@ public class IndexController {
     public String blog(@PathVariable Long id, Model model) {
         model.addAttribute("blog", blogService.getAndConvert(id));
         return "blog";
+    }
+
+    @GetMapping("/footer/newBlog")
+    public String newBlogs(Model model) {
+        model.addAttribute("newBlogs", blogService.listRecommendBlogTop(3));
+        return "_fragments :: newBlogList";
     }
 }

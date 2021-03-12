@@ -67,10 +67,10 @@
                                                         <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">测试</a></div>
                                                     </div>
                                                     <div class="item">
-                                                        <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}">2020-01-01</span>
+                                                        <i class="calendar icon" style="vertical-align: middle;"></i><span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}" style="vertical-align: middle;">2020-01-01</span>
                                                     </div>
                                                     <div class="item">
-                                                        <i class="eye icon"></i><span th:text="${blog.views}">1345</span>
+                                                        <i class="eye icon" style="vertical-align: middle;"></i><span th:text="${blog.views}" style="vertical-align: middle;">1345</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -279,13 +279,13 @@
                                         <i class="idea icon"></i>分类
                                     </div>
                                     <div class="right aligned column">
-                                        <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                        <a href="#" th:href="@{/types/-1}" target="_blank">more <i class="angle double right icon"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="ui teal segment">
                                 <div class="ui fluid vertical menu">
-                                    <a href="#" class="item" th:each="type : ${types}">
+                                    <a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item" th:each="type : ${types}">
                                         <span th:text="${type.name}">菜单测试</span>
                                         <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
                                     </a>
@@ -315,13 +315,13 @@
                                         <i class="tags icon"></i>标签
                                     </div>
                                     <div class="right aligned column">
-                                        <a href="#" target="_blank">more <i class="angle double right icon"></i></a>
+                                        <a href="#" th:href="@{/tags/-1}" target="_blank">more <i class="angle double right icon"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="ui teal segment">
-                                <a href="#" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
-                                    <span th:text="${tag.name}">标签测试</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
+                                <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                                    <span th:text="${tag.name}">标签测试</span><div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
                                 </a>
                                 <!--/*-->
                                 <a href="#" class="ui teal basic left pointing label m-margin-tb-tiny">
